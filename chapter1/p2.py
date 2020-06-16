@@ -1,7 +1,7 @@
-p = "パトカー"
-t = "タクシー"
-ans = ""
+P = "パトカー"
+T = "タクシー"
+ANS = ""
 
-for (i, _) in enumerate(p):
-    ans += p[i] + t[i]
-print(ans)
+for (i, _) in enumerate(P):
+    ANS += P[i] + T[i]
+print(ANS)

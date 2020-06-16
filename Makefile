@@ -1,2 +1,2 @@
 lint:
-	pylint **/*.py
+	cd $(PWD) && pylint **/*.py
