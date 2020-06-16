@@ -2,6 +2,6 @@ p = "パトカー"
 t = "タクシー"
 ans = ""
 
-for i in range(len(p)):
+for (i, _) in enumerate(p):
     ans += p[i] + t[i]
 print(ans)
