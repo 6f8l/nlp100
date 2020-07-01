@@ -1,12 +1,15 @@
 import gzip
-import ast
+import json
+import re
 
 FNAME = 'jawiki-country.json.gz'
-data = []
-with gzip.open(FNAME, "rt", "utf_8") as fi:
-    for line in fi:
-        dic = ast.literal_eval(line)
-        if "イギリス" in dic['text']:
-            data.append(dic)
+def extract_UK():
+    with gzip.open(FNAME, 'rt') as data_file:
+        for line in data_file:
+            data_json = json.loads(line)
+            if data_json['title'] == 'イギリス':
+                return data_json['text']
+    raise ValueError('Not found England articles.')
 
-print(data)
+if __name__ == "__main__":
+    print(extract_UK())
