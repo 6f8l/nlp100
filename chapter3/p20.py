@@ -1,9 +1,8 @@
 import gzip
 import json
-import re
 
 FNAME = 'jawiki-country.json.gz'
-def extract_UK():
+def extract_uk():
     with gzip.open(FNAME, 'rt') as data_file:
         for line in data_file:
             data_json = json.loads(line)
@@ -12,4 +11,4 @@ def extract_UK():
     raise ValueError('Not found England articles.')
 
 if __name__ == "__main__":
-    print(extract_UK())
+    print(extract_uk())
