@@ -21,7 +21,7 @@ if __name__ == "__main__":
     END = False
 
     d = {}
-    rpattern = r'\'|\[+|\]+|{+|}+'
+    RPATTERN = r'\'|\[+|\]+|{+|}+'
 
     for line in doc:
         if END:
@@ -32,7 +32,7 @@ if __name__ == "__main__":
                 continue
         elif ENTER:
             for it in r.finditer(line):
-                d[it.group(1)] = re.sub(rpattern, '', it.group(2))
+                d[it.group(1)] = re.sub(RPATTERN, '', it.group(2))
             if rend.match(line):
                 END = True
                 continue
