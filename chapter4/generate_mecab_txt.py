@@ -2,8 +2,8 @@
 import MeCab
 
 print('実行中…')
-input_file_name = 'neko.txt'
-f =  open(input_file_name,'r')
+I_FNAME = 'neko.txt'
+f = open(I_FNAME, 'r')
 
 data = f.read()
 
@@ -11,7 +11,7 @@ mecab = MeCab.Tagger('-d /usr/local/lib/mecab/dic/mecab-ipadic-neologd')
 text = mecab.parse(data)
 mecab.parse('')
 
-out_file_name = "neko.txt.mecab"
-with open(out_file_name, 'w') as f:
+O_FNAME = "neko.txt.mecab"
+with open(O_FNAME, 'w') as f:
     f.write(text)
-print('ファイル出力完了 ファイル名：' + out_file_name)
+print('ファイル出力完了 ファイル名：' + O_FNAME)
